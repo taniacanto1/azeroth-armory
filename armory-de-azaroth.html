@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Card</title>
+    <link rel="stylesheet" href="style-card-azaroth.css">
+    <script src="card-azaroth.js" defer></script>
+    <style>
+        /* Estado inicial: solo imagen y nombre visibles */
+        .character-card {
+            height: 300px; /* altura de la imagen */
+            overflow: hidden;
+            transition: height 0.4s ease; /* animación suave */
+        }
+
+        /* Card expandida */
+        .character-card.expanded {
+            height: auto; /* deja que se vea todo el contenido */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-wrapper">
+    <div class="character-label">Tryndamere</div>
+
+    <article class="character-card">
+        <div class="card-image"></div>
+
+        <div class="card-content">
+            <!-- Header -->
+            <header class="card-header">
+                <span class="character-stats">Stats</span>
+            </header>
+
+            <!-- Body -->
+            <section class="card-body">
+                <p>Race: Freljord Barbarian</p>
+                <p>Class: Fighter</p>
+                <p>Specialization: Physical Damage / Critical</p>
+                <p>Role: Tank/Jungle</p>
+            </section>
+
+            <!-- Stats -->
+            <section class="card-stats">
+                <p>Base Health: 720</p>
+                <p>Attack Damage: 68</p>
+                <p>Attack Speed: 0.67</p>
+                <p>Mobility: Medium</p>
+            </section>
+
+            <!-- Footer -->
+            <footer class="card-footer">
+                <p>Status: Online</p>
+                <p>Guild Rank: Master</p>
+                <p>Realm: Freljord</p>
+            </footer>
+        </div>
+    </article>
+
+    <!-- Script para expandir la card al hacer click -->
+    <script>
+        const cards = document.querySelectorAll('.character-card');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('expanded');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
